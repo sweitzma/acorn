@@ -18,3 +18,10 @@
 # TODO
 ## Dockerize the build pipeline
  - yarn
+
+## Yarn
+ - can i make a docker image of a yarn tool for this repo?
+ - what el
+
+## Nginx
+ - learn whats going on in the config
