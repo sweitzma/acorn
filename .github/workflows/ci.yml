@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  fake-ci:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    # Try out some command
+    - name: List all files because we need to do something
+      run: ls -la
+
+    # Try out some other command
+    - name: Be grateful
+      run: |
+        echo Thank you for making a PR.
+        echo Thank you for being you.
