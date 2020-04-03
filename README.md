@@ -1,3 +1,8 @@
+# Acorn Animal Hospital Website
+![CI](https://github.com/sweitzma/acorn/workflows/CI/badge.svg?branch=master)
+
+Welcome to the best combo of animal hospital and website in the country.
+
 # Setup
  - React in the frontend
  - use react router
