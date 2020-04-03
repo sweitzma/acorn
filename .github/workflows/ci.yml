@@ -21,3 +21,5 @@ jobs:
       run: |
         echo Thank you for making a PR.
         echo Thank you for being you.
+    - name: bad
+      run: exit 1
