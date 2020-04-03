@@ -1,0 +1,12 @@
+name: CD
+
+on:
+  merge:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Filler
+        run: echo "Not at deployment stage yet"
