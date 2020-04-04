@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,74 +8,62 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+import './Menu.scss';
+
+const MenuItem = (props) => {
+  let link;
+  console.log(props.path);
+  if (props.external === true) {
+    link = <a href={ props.path }>{ props.name }</a>;
+  } else {
+    link = <Link to={ props.path}>{ props.name }</Link>;
+  }
+
+  return (
+    <span className="MenuItem">
+      { link }
+    </span>
+  );
+}
+MenuItem.propTypes = {
+  path: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  external: PropTypes.bool,
+}
 
 const Menu = (props) => {
   return (
     <div>
       <h1>Acorn Animal Hospital</h1>
       <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/team">Team</Link>
-            </li>
-            <li>
-              <Link to="/veterinary-care">Veterinary Care</Link>
-            </li>
-            <li>
-              <Link to="/boarding">Boarding</Link>
-            </li>
-            <li>
-              <Link to="/grooming">Grooming</Link>
-            </li>
-            <li>
-              <Link to="/maggie-fund">MaggieFund</Link>
-            </li>
-            <li>
-              <Link to="/explore">Explore</Link>
-            </li>
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li>
-              <a href="https://dashboard.petdesk.com/WebApptRequest/?placeGUID=04211d3b-eac1-48d1-a939-045d22296e50">Request Appointment</a>
-            </li>
-          </ul>
+        <div className="Router">
+          <div className="MenuBar">
+            <MenuItem path="/" name="Home" />
+            <MenuItem path="/team" name="Team" />
+            <MenuItem path="/veterinary-care" name="Veterinary Care" />
+            <MenuItem path="/boarding" name="Boarding" />
+            <MenuItem path="/grooming" name="Grooming" />
+            <MenuItem path="/maggie-fund" name="MaggieFund" />
+            <MenuItem path="/explore" name="Explore" />
+            <MenuItem path="/blog" name="Blog" />
+            <MenuItem path="/contact" name="Contact" />
+            <MenuItem
+                path={ "https://dashboard.petdesk.com/WebApptRequest/?placeGUID=04211d3b-eac1-48d1-a939-045d22296e50" }
+                name={ "Request Appointment" }
+                external={ true }
+            />
+          </div>
 
           <Switch>
-            <Route path="/team">
-              <Team />
-            </Route>
-            <Route path="/veterinary-care">
-              <VetCare />
-            </Route>
-            <Route path="/boarding">
-              <Boarding />
-            </Route>
-            <Route path="/grooming">
-              <Grooming />
-            </Route>
-            <Route path="/maggie-fund">
-              <MaggieFund />
-            </Route>
-            <Route path="/explore">
-              <Explore />
-            </Route>
-            <Route path="/blog">
-              <Blog />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+            <Route path="/team"><Team /></Route>
+            <Route path="/veterinary-care"><VetCare /></Route>
+            <Route path="/boarding"><Boarding /></Route>
+            <Route path="/grooming"><Grooming /></Route>
+            <Route path="/maggie-fund"><MaggieFund /></Route>
+            <Route path="/explore"><Explore /></Route>
+            <Route path="/blog"><Blog /></Route>
+            <Route path="/contact"><Contact /></Route>
+            <Route path="/"><Home /></Route>
           </Switch>
         </div>
       </Router>

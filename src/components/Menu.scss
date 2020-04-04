@@ -1,0 +1,13 @@
+@import "../variables.scss";
+
+.MenuItem {
+  background-color: rgba($color4, 0.2);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.MenuBar {
+  background-color: rgba($color3, 0.2);
+}
