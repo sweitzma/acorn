@@ -1,4 +1,5 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -17,9 +18,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: [/node_modules/],
-        use: {
-          loader: 'babel-loader'
-        }
+        use: ['babel-loader']
       },
       {
         test: /\.scss$/,
@@ -34,7 +33,14 @@ module.exports = {
   },
 
   plugins: [
-    new BundleAnalyzerPlugin({analyzerMode: "disabled", generateStatsFile: true}),
+    new BundleAnalyzerPlugin({ analyzerMode: "disabled", generateStatsFile: true }),
+
+    // experimental, not actually used
+    new HtmlWebpackPlugin({
+      title: "Acorn Animal Hospital",
+      filename: 'webpack.index.html',
+      hash: false,
+    }),
   ],
 };
 
