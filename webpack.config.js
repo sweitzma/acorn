@@ -1,3 +1,5 @@
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
   mode: 'development',
   entry: './src/index.jsx',
@@ -29,7 +31,11 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+
+  plugins: [
+    new BundleAnalyzerPlugin({analyzerMode: "disabled", generateStatsFile: true}),
+  ],
 };
 
 
