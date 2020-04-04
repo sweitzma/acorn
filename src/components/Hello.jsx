@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,9 +8,7 @@ import {
   useParams
 } from "react-router-dom";
 
-export interface HelloProps { compiler: string; framework: string; }
-
-export const Hello = (props: HelloProps) => {
+const Hello = (props) => {
   return (
     <div>
       <h1>Hello from {props.compiler} and {props.framework}!</h1>
@@ -72,10 +70,6 @@ function Topics() {
         </li>
       </ul>
 
-      {/* The Topics page has its own <Switch> with more routes
-          that build on the /topics URL path. You can think of the
-          2nd <Route> here as an "index" page for all topics, or
-          the page that is shown when no topic is selected */}
       <Switch>
         <Route path={`${match.path}/:topicId`}>
           <Topic />
@@ -92,3 +86,5 @@ function Topic() {
   let { topicId } = useParams();
   return <h3>Requested topic ID: {topicId}</h3>;
 }
+
+export default Hello;
