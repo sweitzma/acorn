@@ -21,7 +21,7 @@ const MenuItem = (props) => {
 
   return (
     <span className="MenuItem">
-        { link }
+      { link }
     </span>
   );
 }
@@ -36,50 +36,34 @@ const Menu = (props) => {
     <div>
       <h1>Acorn Animal Hospital</h1>
       <Router>
-        <div className="MenuBar">
-          <MenuItem path="/" name="Home" />
-          <MenuItem path="/team" name="Team" />
-          <MenuItem path="/veterinary-care" name="Veterinary Care" />
-          <MenuItem path="/boarding" name="Boarding" />
-          <MenuItem path="/grooming" name="Grooming" />
-          <MenuItem path="/maggie-fund" name="MaggieFund" />
-          <MenuItem path="/explore" name="Explore" />
-          <MenuItem path="/blog" name="Blog" />
-          <MenuItem path="/contact" name="Contact" />
-          <MenuItem
-              path={ "https://dashboard.petdesk.com/WebApptRequest/?placeGUID=04211d3b-eac1-48d1-a939-045d22296e50" }
-              name={ "Request Appointment" }
-              external={ true }
-          />
+        <div className="Router">
+          <div className="MenuBar">
+            <MenuItem path="/" name="Home" />
+            <MenuItem path="/team" name="Team" />
+            <MenuItem path="/veterinary-care" name="Veterinary Care" />
+            <MenuItem path="/boarding" name="Boarding" />
+            <MenuItem path="/grooming" name="Grooming" />
+            <MenuItem path="/maggie-fund" name="MaggieFund" />
+            <MenuItem path="/explore" name="Explore" />
+            <MenuItem path="/blog" name="Blog" />
+            <MenuItem path="/contact" name="Contact" />
+            <MenuItem
+                path={ "https://dashboard.petdesk.com/WebApptRequest/?placeGUID=04211d3b-eac1-48d1-a939-045d22296e50" }
+                name={ "Request Appointment" }
+                external={ true }
+            />
+          </div>
 
           <Switch>
-            <Route path="/team">
-              <Team />
-            </Route>
-            <Route path="/veterinary-care">
-              <VetCare />
-            </Route>
-            <Route path="/boarding">
-              <Boarding />
-            </Route>
-            <Route path="/grooming">
-              <Grooming />
-            </Route>
-            <Route path="/maggie-fund">
-              <MaggieFund />
-            </Route>
-            <Route path="/explore">
-              <Explore />
-            </Route>
-            <Route path="/blog">
-              <Blog />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+            <Route path="/team"><Team /></Route>
+            <Route path="/veterinary-care"><VetCare /></Route>
+            <Route path="/boarding"><Boarding /></Route>
+            <Route path="/grooming"><Grooming /></Route>
+            <Route path="/maggie-fund"><MaggieFund /></Route>
+            <Route path="/explore"><Explore /></Route>
+            <Route path="/blog"><Blog /></Route>
+            <Route path="/contact"><Contact /></Route>
+            <Route path="/"><Home /></Route>
           </Switch>
         </div>
       </Router>
