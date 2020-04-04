@@ -3,5 +3,6 @@ nginx:
   ports:
     - "8080:80"
   volumes:
-    - ./frontend/:/website
+    - ./dist:/acorn
+    - ./log/nginx:/var/log/nginx
   restart: always

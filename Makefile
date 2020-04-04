@@ -1,4 +1,11 @@
-.PHONY: start stop
+.PHONY: start stop build watch buildjs
+
+buildjs:
+	yarn webpack
+
+watch:
+	yarn webpack --watch
+
 build:
 	docker-compose build
 
