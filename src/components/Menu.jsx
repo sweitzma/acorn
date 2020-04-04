@@ -8,6 +8,7 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+import './Menu.scss';
 
 const MenuItem = (props) => {
   let link;
