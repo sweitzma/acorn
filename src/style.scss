@@ -1,5 +1,8 @@
-@import "variables.scss";
+@import "_variables.scss";
 
 body {
   background-color: rgba($color1, .1);
 }
+
+// Import Bootstrap
+@import '~bootstrap/scss/bootstrap';
