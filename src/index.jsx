@@ -1,9 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Hello from "./components/Hello";
+import Menu from "./components/Menu";
 
-ReactDOM.render(
-  <Hello compiler="tst" framework="lllll" />,
-  document.getElementById("app")
-);
+ReactDOM.render(<Menu />, document.getElementById("app"));
